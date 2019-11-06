@@ -18,3 +18,7 @@
 [submodule "libraries/yubihsm"]
 	path = libraries/yubihsm
 	url = https://github.com/Yubico/yubihsm-shell
+[submodule "libraries/elastos"]
+	path = libraries/elastos
+	url = https://github.com/elastos/Elastos.ELA.SPV.Cpp.git
+	branch = dev

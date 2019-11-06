@@ -31,6 +31,7 @@ libraries/utilities/git_revision.cpp
 libraries/egenesis/egenesis_brief.cpp
 libraries/egenesis/egenesis_full.cpp
 libraries/egenesis/embed_genesis
+libraries/elastos
 libraries/types/type_generator
 libraries/types/types_test
 libraries/fc/test/crypto/test_cypher_suites

@@ -7,6 +7,7 @@ add_subdirectory( appbase )
 add_subdirectory( chain )
 add_subdirectory( testing )
 
+#set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fPIC -fvisibility=hidden")
 #turn tools&tests off; not needed for library build
 set(BUILD_TESTS OFF CACHE BOOL "Build GTest-based tests")
 set(BUILD_TOOLS OFF CACHE BOOL "Build wabt tools")
@@ -21,6 +22,10 @@ message(STATUS "Starting yubihsm configuration...")
 add_subdirectory( yubihsm EXCLUDE_FROM_ALL )
 set_target_properties(yubihsm_static PROPERTIES COMPILE_OPTIONS "-fno-lto")
 message(STATUS "yubihsm configuration complete")
+
+set(SPV_ENABLE_STATIC OFF)
+add_subdirectory( elastos )
+set_target_properties(spvsdk-shared PROPERTIES COMPILE_OPTIONS "-fvisibility=default")
 
 get_property(_CTEST_CUSTOM_TESTS_IGNORE GLOBAL PROPERTY CTEST_CUSTOM_TESTS_IGNORE)
 set_property(GLOBAL PROPERTY CTEST_CUSTOM_TESTS_IGNORE
